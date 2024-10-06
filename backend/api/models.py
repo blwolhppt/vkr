@@ -9,8 +9,9 @@ class Teacher(models.Model):
     last_name = models.CharField(max_length=255, null=False, blank=False,
                                  verbose_name="Фамилия")
     date_of_birth = models.DateField(verbose_name="Дата рождения")
-    photo = models.ImageField(null=True, blank=True,
-                              verbose_name="Фото профиля")
+    photo = models.ImageField(upload_to='teachers_images/', null=True,
+                              blank=True, verbose_name="Фото профиля")
+    email = models.EmailField(default="default@mail.ru", verbose_name="Почта")
 
     # documents = models.ForeignKey() подумать как можно сделать проверку препода
 
@@ -71,7 +72,8 @@ class CourseStudent(models.Model):
 class VideoMaterial(models.Model):
     video_name = models.CharField(max_length=255,
                                   verbose_name="Название видео")
-    video_file = models.FileField(verbose_name="Видеоматериал к уроку")
+    video_file = models.FileField(upload_to='video_materials/',
+                                  verbose_name="Видеоматериал к уроку")
     video_description = models.TextField(max_length=1000,
                                          verbose_name="Описание видео")
 

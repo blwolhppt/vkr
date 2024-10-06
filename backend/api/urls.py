@@ -5,12 +5,12 @@ from . import views
 
 router = SimpleRouter()
 
-router.register('teacher', views.TeacherViewSet)
-router.register('course', views.CourseViewSet)
-router.register('coursestudent', views.CourseStudentViewSet)
-router.register('videomaterial', views.VideoMaterialViewSet)
-router.register('textmaterial', views.TextMaterialViewSet)
-router.register('lesson', views.LessonViewSet)
+router.register('teachers', views.TeacherViewSet)
+router.register('courses', views.CourseViewSet)
+router.register('coursestudents', views.CourseStudentViewSet)
+router.register('videomaterials', views.VideoMaterialViewSet)
+router.register('textmaterials', views.TextMaterialViewSet)
+router.register('lessons', views.LessonViewSet)
 
 
 urlpatterns = [
