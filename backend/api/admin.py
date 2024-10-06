@@ -1,6 +1,7 @@
 from django.contrib import admin
 from djangoql.admin import DjangoQLSearchMixin
-from .models import Teacher, Course, CourseStudent, Lesson, VideoMaterial, TextMaterial
+from .models import Teacher, Course, CourseStudent, Lesson, VideoMaterial,\
+    TextMaterial
 
 
 admin.site.register(Teacher)
