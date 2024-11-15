@@ -134,10 +134,13 @@ class Lesson(models.Model):
         on_delete=models.DO_NOTHING,
         null=False,
         blank=False,
-        verbose_name="Учебная группа"
+        verbose_name="Курс"
     )
     number_of_lesson = models.PositiveIntegerField(
         verbose_name="Номер урока в курсе")
+    description_of_lesson = models.TextField(
+        max_length=300, verbose_name="Описание урока"
+    )
     lesson_name = models.CharField(max_length=255, null=False, blank=False,
                                    verbose_name="Название урока")
     video_file = models.ForeignKey(
@@ -146,15 +149,16 @@ class Lesson(models.Model):
         null=True,
         blank=True,
         verbose_name="Видеоматериал к уроку")
+    
     text_file = models.ForeignKey(
         to=TextMaterial,
         on_delete=models.DO_NOTHING,
         null=True,
         blank=True,
         verbose_name="Текстовый материал к уроку")
+    
+    # надо добавить тесты 
 
-    # text_file - подумать, как сделать написание урока - типо встроить ворд в сайт??
-    # test_file - подумать, вставить типо гугл форму?
 
     def __str__(self):
         return f"{self.number_of_lesson}. {self.lesson_name}"
