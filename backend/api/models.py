@@ -23,6 +23,26 @@ class Teacher(models.Model):
         verbose_name_plural = "Преподаватели"
 
 
+class Categories(models.Model):
+    name = models.CharField(max_length=200,
+                            verbose_name='Название', unique=True)
+    slug = models.SlugField(max_length=300,
+                            verbose_name='Cлаг', unique=True)
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+    def __str__(self):
+        return self.name
+
+
+LEVEL = (
+    ('new', 'Начинающий'),
+    ('middle', 'Средний'),
+    ('pro', 'Продвинутый'),)
+
+
 class Course(models.Model):
     course_name = models.CharField(max_length=255,
                                    verbose_name="Название курса")
@@ -33,6 +53,13 @@ class Course(models.Model):
         blank=False,
         verbose_name="Преподаватель"
     )
+    duration = models.IntegerField(null=False, blank=False, default=1, verbose_name="Длительность курса")
+    price = models.FloatField(null=False, blank=False, default=1, verbose_name="Цена курса")
+    description = models.TextField(null=False, blank=False, max_length=250, verbose_name="Описание курса")
+    for_who = models.CharField(max_length=150, choices=LEVEL, null=False, blank=False, verbose_name="Для кого")
+    categories = models.ManyToManyField(Categories, verbose_name='Категории')
+
+
 
     def __str__(self):
         return f"{self.course_name}"
