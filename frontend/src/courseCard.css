@@ -1,0 +1,81 @@
+/* courseCard.css */
+.course-card {
+    background-color: #a6c6af;
+    color: #333333;
+    border-radius: 20px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.course-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.course-info {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.course-info p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.course-info span {
+    font-weight: bold;
+    color: #86b09e;
+}
+
+.decorative-elements {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.circle.pink {
+    background-color: #ffb6c1;
+}
+
+.circle.green {
+    background-color: #86b09e;
+}
+
+.circle.blue {
+    background-color: #c4e0e5;
+}
+
+.add-button {
+    background-color: #f7d669;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #333333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #ecc558;
+}

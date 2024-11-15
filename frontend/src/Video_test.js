@@ -17,12 +17,12 @@ function Video_test() {
 
   return (
     <div>
-      <h1>Teachers</h1>
+      <h1>Video тест</h1>
       <ul>
         {videos.map(video => (
           <li key={video.id}> {video.video_name}
               {video.video_file && (
-                <video width="320" height="240" controls>
+                <video width="700" height="400" controls>
                     <source src={video.video_file} type="video/mp4" />
                     Ваш браузер не поддерживает воспроизведение видео.
                 </video>
